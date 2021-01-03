@@ -19,3 +19,18 @@ Let's extend the base templates to our other templates
 Finally, let's do some tests on our app, Writing tests is important because it automates the process of confirming that the
 code works as expected, Django comes with robust, built-in testing tools for writing and running tests
 We will us the tests.py file that comes with django to do this
+
+# Now we are going to deploy heroku
+we will add a procfile by using this command: touch procfile
+add the following line in the procfile 'web: gunicorn pages_project.wsgi --log-file -'
+then install gunicorn using pip
+Add a runtime.txt file in the project root directory and specify the correct Python version
+Install the following packages in the environment "pip install gunicorn dj-database-url whitenoise psycopg2"
+Add a requirements.txt file "pip freeze > requirements.txt"
+Heroku will recognize a deployed application as a Python application only if it has a requirements.txt file in the root directory. Even if your application has no module dependencies, it should include an empty requirements.txt file to indicate that your app has no dependencies.
+
+# Setting up static assets for heroku
+Open up settings.py file and some minor changes, preferably at the bottom of the file
+Add whitenoise middleware at the top of the middleware list in settings.py
+Update Database Configuration in settings.py (at the bottom of the file)
+push changes to gitnub first and then create an app and deploy
