@@ -34,3 +34,15 @@ Open up settings.py file and some minor changes, preferably at the bottom of the
 Add whitenoise middleware at the top of the middleware list in settings.py
 Update Database Configuration in settings.py (at the bottom of the file)
 push changes to gitnub first and then create an app and deploy
+
+# Deployment
+ Create App in Heroku from terminal "Choose any name for your app. Heroku will inform you if the name already exists"
+ heroku create app_name - to create app/ours we'll call 'pagesdemo'
+ Add your app domain name to ALLOWED_HOSTS in settings.py.
+ Initialize Git and connect your new app (or existing one) to Heroku Git remote repository if not initialized
+ connect to heroku using "heroku git:remote -a app_name"
+ tell heroku to ignore static files using "heroku config:set DISABLE_COLLECTSTATIC=1"
+ Add files to the staging area and commit changes.
+ Push the project to the remote repository (deploy app to Heroku) using "git push heroku main"
+
+
