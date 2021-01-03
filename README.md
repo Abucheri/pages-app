@@ -44,5 +44,5 @@ push changes to gitnub first and then create an app and deploy
  tell heroku to ignore static files using "heroku config:set DISABLE_COLLECTSTATIC=1"
  Add files to the staging area and commit changes.
  Push the project to the remote repository (deploy app to Heroku) using "git push heroku main"
-
-
+we need to set some web traffic usind "heroku ps:scale web=1"
+finally let's confirm our app is live and online using "heroku open"
